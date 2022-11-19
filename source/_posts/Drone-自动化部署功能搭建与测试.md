@@ -7,4 +7,5 @@ categories:
 - [程序, 教程]
 ---
 
-测
+* 使用 docker 快速部署 hexo 博客(dockerfile + docker-compose)：https://blog.csdn.net/xs20691718/article/details/81807784
+* 
