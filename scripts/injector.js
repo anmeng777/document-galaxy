@@ -1,0 +1,1 @@
+hexo.extend.injector.register('head_end', '<meta name="apple-mobile-web-app-capable" content="yes" />','default')
