@@ -33,6 +33,8 @@ vue create hello-world
 # electron-builder插件集成
 
 > 参考：https://www.jianshu.com/p/dfcf2a6a497c
+>
+> https://www.jianshu.com/p/1dbb96bc8f37
 
 停止项目运行。
 
