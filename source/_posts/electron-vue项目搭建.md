@@ -76,5 +76,19 @@ npm install -g electron
 
 
 
+# 注意事项
+
+## arm 打包报错：snapcraft
+
+增加打包配置：
+
+```javascript
+linux: {
+	tartget: [
+		"AppImage"
+	]
+}
+```
+
 
 
