@@ -52,19 +52,27 @@ vue ui
 
 
 
+# linux系统搭建node环境
+
+> Linux arm也通用
+>
+> 参考：https://www.cnblogs.com/zt88cn/p/12023706.html
+
+1. 下载node.js，网址：nodejs.cn
+2. 解压到某目录，例如解压后node目录为：/home/orangepi/node-v12.13.1-linux-armv7l
+3. 执行以下命令 ```sudo ln /home/orangepi/node-v12.13.1-linux-armv7l/bin/node /usr/local/bin/node```
+
+4. 执行以下命令```sudo ln -s /home/orangepi/node-v12.13.1-linux-armv7l/lib/node_modules/npm/bin/npm-cli.js  /usr/local/bin/npm```
+
+5. 执行node -v和npm -v查看版本
 
 
 
+# 设置electron镜像
 
+npm config set electron_mirror https://repo.huaweicloud.com/electron/ 
 
-
-
-
-
-
-
-
-
+npm install -g electron
 
 
 
