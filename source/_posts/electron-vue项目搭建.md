@@ -90,5 +90,16 @@ linux: {
 }
 ```
 
+## linux下使用ffi-napi时，npm install报错问题
 
+> https://segmentfault.com/q/1010000042601075?utm_source=sf-similar-question
+>
+> https://blog.csdn.net/weixin_33304777/article/details/116893532
+
+报错：gyp ERR! stack Error: not found: make
+
+```sh
+yum i gcc-c++
+sudo apt-get install build-essential
+```
 
