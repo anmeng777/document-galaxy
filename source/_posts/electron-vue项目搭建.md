@@ -103,3 +103,4 @@ yum i gcc-c++
 sudo apt-get install build-essential
 ```
 
+执行第一行命令后没有成功，执行完第二个后可以。可能只执行第二个就行
