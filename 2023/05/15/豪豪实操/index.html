@@ -25,8 +25,14 @@
 <meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094545087_repeat_1684115146150__444946_repeat_1684115462857__390698.png">
 <meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094558757_repeat_1684115160235__418743_repeat_1684115462786__787865.png">
 <meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094635983_repeat_1684115198014__683777_repeat_1684115463020__606501.png">
+<meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515095537485_repeat_1684115790738__148863.png">
+<meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515095808578_repeat_1684115891187__495639.png">
+<meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100018660_repeat_1684116024319__823407.png">
+<meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100436000_repeat_1684116285856__023723.png">
+<meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100854285_repeat_1684116567212__624079.png">
+<meta property="og:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100938119_repeat_1684116579292__056567.png">
 <meta property="article:published_time" content="2023-05-15T09:50:21.000Z">
-<meta property="article:modified_time" content="2023-05-15T01:52:53.653Z">
+<meta property="article:modified_time" content="2023-05-15T02:10:34.962Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515092623845_repeat_1684113986477__922666.png">
@@ -130,8 +136,12 @@
 </li>
 <li><p>项目链接MySQL和Redis</p>
 <ol>
-<li>打开配置文件application.yml，修改71行左右的参数，如果Redis有密码，在这里加上密码</li>
-<li></li>
+<li>打开配置文件application.yml，修改71行左右的参数，如果Redis有密码，在这里加上密码<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515095537485_repeat_1684115790738__148863.png" alt="image-20230515095537485"></li>
+<li>这个配置文件里没看到数据库的配置，但是在57行看到了spring.profiles.active的配置，值是druid，所以还需要检查application-druid.yml的配置，打开一看果然有数据库的配置<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515095808578_repeat_1684115891187__495639.png" alt="image-20230515095808578"></li>
+<li>第9、10、11行修改下数据库的参数<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100018660_repeat_1684116024319__823407.png" alt="image-20230515100018660"></li>
+<li>启动项目测试（右键这个文件，选择RUN。。。）<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100436000_repeat_1684116285856__023723.png" alt="image-20230515100436000"></li>
+<li>看到“成功”的打印，证明成功<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100854285_repeat_1684116567212__624079.png" alt="image-20230515100854285"></li>
+<li>浏览器直接访问<a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a> 如果看到欢迎，证明成功<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515100938119_repeat_1684116579292__056567.png" alt="image-20230515100938119"></li>
 </ol>
 </li>
 </ol>
@@ -139,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clho6xpuc000kbyok62xk7eyq" data-title="豪豪实操" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clho7kj14000kd3oyhh0igtt1" data-title="豪豪实操" class="article-share-link">Share</a>
       
       
       
