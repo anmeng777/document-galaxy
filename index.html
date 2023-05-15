@@ -128,13 +128,18 @@
 <li>在SQL文件夹中新建文件“shicao.sql”<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515101202863_repeat_1684116728500__015522.png" alt="image-20230515101202863"><img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515101221255_repeat_1684116749488__988493.png" alt="image-20230515101221255"></li>
 <li>复制下面的建表语句，并且在Navicat中执行</li>
 </ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 学生基本信息表</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> stu_base_info;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stu_base_info (</span><br><span class="line">  stu_id            <span class="type">bigint</span>(<span class="number">20</span>)      <span class="keyword">not</span> <span class="keyword">null</span> auto_increment    comment <span class="string">&#x27;学生id&#x27;</span>,</span><br><span class="line">  stu_code         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;学生学号&#x27;</span>,</span><br><span class="line">  stu_name         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;学生姓名&#x27;</span>,</span><br><span class="line">  del_flag          <span class="type">char</span>(<span class="number">1</span>)         <span class="keyword">default</span> <span class="string">&#x27;0&#x27;</span>                comment <span class="string">&#x27;删除标志（0代表存在 2代表删除）&#x27;</span>,</span><br><span class="line">  create_time 	    datetime                                   comment <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  update_time       datetime                                   comment <span class="string">&#x27;更新时间&#x27;</span>,</span><br><span class="line">  <span class="keyword">primary</span> key (stu_id)</span><br><span class="line">) engine<span class="operator">=</span>innodb auto_increment<span class="operator">=</span><span class="number">200</span> comment <span class="operator">=</span> <span class="string">&#x27;学生基本信息表&#x27;</span>;</span><br><span class="line"><span class="comment">-- 增加唯一性约束，保证学号的唯一性</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> stu_base_info <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> unq_stu_code <span class="keyword">UNIQUE</span> (stu_code);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 学生成绩表</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> stu_score;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stu_score (</span><br><span class="line">  score_id            <span class="type">bigint</span>(<span class="number">20</span>)      <span class="keyword">not</span> <span class="keyword">null</span> auto_increment    comment <span class="string">&#x27;成绩id&#x27;</span>,</span><br><span class="line">  stu_code         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;学生学号&#x27;</span>,</span><br><span class="line">  stu_subject         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;科目&#x27;</span>,</span><br><span class="line">  stu_score         <span class="type">int</span>(<span class="number">11</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;分数&#x27;</span>,</span><br><span class="line">  del_flag          <span class="type">char</span>(<span class="number">1</span>)         <span class="keyword">default</span> <span class="string">&#x27;0&#x27;</span>                comment <span class="string">&#x27;删除标志（0代表存在 2代表删除）&#x27;</span>,</span><br><span class="line">  create_time 	    datetime                                   comment <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  update_time       datetime                                   comment <span class="string">&#x27;更新时间&#x27;</span>,</span><br><span class="line">  <span class="keyword">primary</span> key (score_id)</span><br><span class="line">) engine<span class="operator">=</span>innodb auto_increment<span class="operator">=</span><span class="number">200</span> comment <span class="operator">=</span> <span class="string">&#x27;学生成绩表&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 学生基本信息表</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> stu_base_info;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stu_base_info (</span><br><span class="line">  stu_id            <span class="type">bigint</span>(<span class="number">20</span>)      <span class="keyword">not</span> <span class="keyword">null</span> auto_increment    comment <span class="string">&#x27;学生id&#x27;</span>,</span><br><span class="line">  stu_code         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;学生学号&#x27;</span>,</span><br><span class="line">  stu_name         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;学生姓名&#x27;</span>,</span><br><span class="line">  del_flag          <span class="type">char</span>(<span class="number">1</span>)         <span class="keyword">default</span> <span class="string">&#x27;0&#x27;</span>                comment <span class="string">&#x27;删除标志（0代表存在 2代表删除）&#x27;</span>,</span><br><span class="line">  create_time 	    datetime                                   comment <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  update_time       datetime                                   comment <span class="string">&#x27;更新时间&#x27;</span>,</span><br><span class="line">  <span class="keyword">primary</span> key (stu_id)</span><br><span class="line">) engine<span class="operator">=</span>innodb auto_increment<span class="operator">=</span><span class="number">200</span> comment <span class="operator">=</span> <span class="string">&#x27;学生基本信息表&#x27;</span>;</span><br><span class="line"><span class="comment">-- 增加唯一性约束，保证学号的唯一性</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> stu_base_info <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> unq_stu_code <span class="keyword">UNIQUE</span> (stu_code);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 学生成绩表</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> stu_score;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stu_score (</span><br><span class="line">  score_id            <span class="type">bigint</span>(<span class="number">20</span>)      <span class="keyword">not</span> <span class="keyword">null</span> auto_increment    comment <span class="string">&#x27;成绩id&#x27;</span>,</span><br><span class="line">  stu_code         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;学生学号&#x27;</span>,</span><br><span class="line">  stu_subject         <span class="type">varchar</span>(<span class="number">50</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;科目&#x27;</span>,</span><br><span class="line">  stu_score         <span class="type">int</span>(<span class="number">11</span>)      <span class="keyword">NOT</span> <span class="keyword">NULL</span>                 comment <span class="string">&#x27;分数&#x27;</span>,</span><br><span class="line">  del_flag          <span class="type">char</span>(<span class="number">1</span>)         <span class="keyword">default</span> <span class="string">&#x27;0&#x27;</span>                comment <span class="string">&#x27;删除标志（0代表存在 2代表删除）&#x27;</span>,</span><br><span class="line">  create_time 	    datetime                                   comment <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  update_time       datetime                                   comment <span class="string">&#x27;更新时间&#x27;</span>,</span><br><span class="line">  <span class="keyword">primary</span> key (score_id)</span><br><span class="line">) engine<span class="operator">=</span>innodb auto_increment<span class="operator">=</span><span class="number">200</span> comment <span class="operator">=</span> <span class="string">&#x27;学生成绩表&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>打开idea下面的terminal，执行”cd ruoyi-ui”，然后执行“npm install”<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515104243977_repeat_1684118566634__266246.png" alt="image-20230515104243977"></li>
+</ol>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clho8mdjo000kf4os9awv8x3c" data-title="豪豪实操" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clho8qhmu000kczor9tz2a9q8" data-title="豪豪实操" class="article-share-link">Share</a>
       
       
       
@@ -149,7 +154,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/document-galaxy/2023/05/15/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-05-15T02:40:08.935Z" itemprop="datePublished">2023-05-15</time>
+  <time class="dt-published" datetime="2023-05-15T02:43:19.790Z" itemprop="datePublished">2023-05-15</time>
 </a>
     
   </div>
@@ -177,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/hello-world/" data-id="clho8mdjc0003f4os1iyc9zcm" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/hello-world/" data-id="clho8qhme0003czor1xoi2fck" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -234,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/03/01/%E5%AE%89%E5%8D%93adb%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clho8mdjg0009f4os89xv6jmg" data-title="安卓adb常用指令" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/03/01/%E5%AE%89%E5%8D%93adb%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clho8qhmk0009czoraa18egd7" data-title="安卓adb常用指令" class="article-share-link">Share</a>
       
       
       
@@ -324,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/12/electron-vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" data-id="clho8mdj90001f4osaelb2on5" data-title="electron-vue项目搭建" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/12/electron-vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" data-id="clho8qhma0001czor2tzogflx" data-title="electron-vue项目搭建" class="article-share-link">Share</a>
       
       
       
@@ -406,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/" data-id="clho8mdjl000gf4osdu83brwc" data-title="程序流程" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/" data-id="clho8qhmr000gczor0i0e8pc9" data-title="程序流程" class="article-share-link">Share</a>
       
       
       
@@ -513,7 +518,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-signalPlatform/" data-id="clho8mdjf0006f4oscnayczb1" data-title="优创信号机平台" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-signalPlatform/" data-id="clho8qhmi0006czorbmnu1c8w" data-title="优创信号机平台" class="article-share-link">Share</a>
       
       
       
@@ -579,7 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-autoCleanCard/" data-id="clho8mdjd0005f4os1cso1ej9" data-title="优创自动清卡软件" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-autoCleanCard/" data-id="clho8qhmg0005czor1zb97edn" data-title="优创自动清卡软件" class="article-share-link">Share</a>
       
       
       
@@ -712,7 +717,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/30/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" data-id="clho8mdjp000of4osawor48mx" data-title="项目部署" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/30/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" data-id="clho8qhmw000oczor647o5ncb" data-title="项目部署" class="article-share-link">Share</a>
       
       
       
@@ -785,7 +790,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/29/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clho8mdjh000bf4os0lwuf255" data-title="开发环境" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/29/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clho8qhmm000bczorf7pee4z0" data-title="开发环境" class="article-share-link">Share</a>
       
       
       
@@ -832,7 +837,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/28/%E8%A6%81%E5%81%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/" data-id="clho8mdjn000if4oscsr9h9jz" data-title="要做的程序" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/28/%E8%A6%81%E5%81%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/" data-id="clho8qhmt000iczor7ugh4qma" data-title="要做的程序" class="article-share-link">Share</a>
       
       
       
