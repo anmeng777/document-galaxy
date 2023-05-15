@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-豪豪实操" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/document-galaxy/2023/04/19/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-04-19T06:10:45.749Z" itemprop="datePublished">2023-04-19</time>
+    <a href="/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" class="article-date">
+  <time class="dt-published" datetime="2023-05-15T09:50:21.000Z" itemprop="datePublished">2023-05-15</time>
 </a>
     
   </div>
@@ -85,7 +85,72 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/document-galaxy/2023/04/19/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/">豪豪实操</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>下载若依项目</p>
+<ol>
+<li>访问码云的若依仓库：<a target="_blank" rel="noopener" href="https://gitee.com/y_project/RuoYi-Vue">https://gitee.com/y_project/RuoYi-Vue</a></li>
+<li>找到右边的“发行版”<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515092623845_repeat_1684113986477__922666.png" alt="image-20230515092623845"></li>
+<li>点击v3.8.5<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515092707248_repeat_1684114028827__605359.png" alt="image-20230515092707248"></li>
+<li>点击“下载 Source Code（ZIP）”</li>
+<li>下载完成后复制项目到GIT项目文件夹中，解压到当前文件夹<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515093017342_repeat_1684114219095__871852.png" alt="image-20230515093017342"></li>
+<li>删除zip压缩包</li>
+<li>使用idea打开项目，如果打开时候提示是否信任（英文），点信任。<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515093058383_repeat_1684114260460__615443_repeat_1684115462674__891106.png" alt="image-20230515093058383"></li>
+</ol>
+</li>
+<li><p>导入数据</p>
+<ol>
+<li>使用navicat创建一个数据库”shicao”，编码是utf8mb4，排序是utf8mb4_general_ci（一般都用这个，好像是排序时候，如果第一个字是中文按照拼音来排序）<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515093952261_repeat_1684114794385__056455_repeat_1684115463031__202965.png" alt="image-20230515093952261"></li>
+<li>使用Navicat将SQL脚本导入到数据库（在项目里的SQL文件夹中的两个SQL文件）<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094224557_repeat_1684115536387__269965_repeat_1684115550400__170638.png" alt="image-20230515094224557"></li>
+<li>在Navicat中右键数据库，选择执行SQL脚本<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094315327_repeat_1684114997004__624283_repeat_1684115462829__637926.png" alt="image-20230515094315327"><img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094445589_repeat_1684115088586__261533_repeat_1684115463038__580587.png" alt="image-20230515094445589"><img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094510644_repeat_1684115232335__273977_repeat_1684115462674__518003.png" alt="image-20230515094510644"><img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094545087_repeat_1684115146150__444946_repeat_1684115462857__390698.png" alt="image-20230515094545087"><img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094558757_repeat_1684115160235__418743_repeat_1684115462786__787865.png" alt="image-20230515094558757"></li>
+<li>刷新一下，会有30个表<img src="https://anmeng.i234.me:10000/typora/macbookpro2015core/2023/05/15/image-20230515094635983_repeat_1684115198014__683777_repeat_1684115463020__606501.png" alt="image-20230515094635983"></li>
+</ol>
+</li>
+<li><p>项目链接MySQL和Redis</p>
+<ol>
+<li>打开配置文件application.yml，修改71行左右的参数，如果Redis有密码，在这里加上密码</li>
+<li></li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clho6xpuc000kbyok62xk7eyq" data-title="豪豪实操" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/document-galaxy/2023/05/15/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2023-05-15T01:52:53.653Z" itemprop="datePublished">2023-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/document-galaxy/2023/05/15/hello-world/">Hello World</a>
     </h1>
   
 
@@ -96,13 +161,13 @@
         这里有东西被加密了，需要输入密码查看哦。
         
           <p class="article-more-link">
-            <a href="/document-galaxy/2023/04/19/hello-world/#more">Read More</a>
+            <a href="/document-galaxy/2023/05/15/hello-world/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/04/19/hello-world/" data-id="clgnap5iu0003d8oogc85gx0u" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/hello-world/" data-id="clho6xptu0003byok309g66z5" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -159,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/03/01/%E5%AE%89%E5%8D%93adb%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clgnap5iy0009d8oocumuffln" data-title="安卓adb常用指令" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/03/01/%E5%AE%89%E5%8D%93adb%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clho6xptz0009byokgi2d52cs" data-title="安卓adb常用指令" class="article-share-link">Share</a>
       
       
       
@@ -249,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/12/electron-vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" data-id="clgnap5ir0001d8oo3jvf9bvj" data-title="electron-vue项目搭建" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/12/electron-vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" data-id="clho6xptr0001byok3ir65mha" data-title="electron-vue项目搭建" class="article-share-link">Share</a>
       
       
       
@@ -331,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/" data-id="clgnap5j4000gd8oo6v6qf0av" data-title="程序流程" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/" data-id="clho6xpua000gbyok7fwx4od5" data-title="程序流程" class="article-share-link">Share</a>
       
       
       
@@ -438,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-signalPlatform/" data-id="clgnap5ix0006d8oo7stif32t" data-title="优创信号机平台" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-signalPlatform/" data-id="clho6xptx0006byokbm1a8r36" data-title="优创信号机平台" class="article-share-link">Share</a>
       
       
       
@@ -504,7 +569,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-autoCleanCard/" data-id="clgnap5iw0005d8oof2d79zpe" data-title="优创自动清卡软件" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-autoCleanCard/" data-id="clho6xptw0005byokb1ql0279" data-title="优创自动清卡软件" class="article-share-link">Share</a>
       
       
       
@@ -637,7 +702,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/30/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" data-id="clgnap5j6000kd8oo0nytcyua" data-title="项目部署" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/30/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" data-id="clho6xpue000obyokadded3gf" data-title="项目部署" class="article-share-link">Share</a>
       
       
       
@@ -710,7 +775,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/29/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clgnap5j0000bd8ooc0viammw" data-title="开发环境" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/29/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clho6xpu0000bbyok65xu3krn" data-title="开发环境" class="article-share-link">Share</a>
       
       
       
@@ -757,96 +822,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/28/%E8%A6%81%E5%81%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/" data-id="clgnap5j5000id8oo48xz89xr" data-title="要做的程序" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/28/%E8%A6%81%E5%81%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/" data-id="clho6xpub000ibyok13rvaxpi" data-title="要做的程序" class="article-share-link">Share</a>
       
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-手机选型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/document-galaxy/2022/12/23/%E6%89%8B%E6%9C%BA%E9%80%89%E5%9E%8B/" class="article-date">
-  <time class="dt-published" datetime="2022-12-23T13:59:01.000Z" itemprop="datePublished">2022-12-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/document-galaxy/categories/%E8%B4%AD%E7%89%A9/">购物</a>►<a class="article-category-link" href="/document-galaxy/categories/%E8%B4%AD%E7%89%A9/%E6%89%8B%E6%9C%BA/">手机</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/document-galaxy/2022/12/23/%E6%89%8B%E6%9C%BA%E9%80%89%E5%9E%8B/">手机选型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="正常周期迭代"><a href="#正常周期迭代" class="headerlink" title="正常周期迭代"></a>正常周期迭代</h1><ul>
-<li><p>迭代时间：3年</p>
-</li>
-<li><p>品牌选择：苹果</p>
-</li>
-<li><p>型号选择：最新的苹果普通型号，如苹果14</p>
-</li>
-<li><p>容量选择：128G或256G</p>
-</li>
-<li><p>价格区间：4000~6000</p>
-</li>
-<li><p>购买时机：六一八</p>
-</li>
-<li><p>迭代流：</p>
-<ol>
-<li><p>泡泡</p>
-</li>
-<li><p>轻轻</p>
-</li>
-<li><p>荣辉</p>
-</li>
-<li><p>我</p>
-</li>
-</ol>
-</li>
-</ul>
-<h1 id="特殊情况购买"><a href="#特殊情况购买" class="headerlink" title="特殊情况购买"></a>特殊情况购买</h1><ul>
-<li><p>购买契机：手机丢失、无法维修</p>
-</li>
-<li><p>迭代时间：略微复杂</p>
-</li>
-<li><p>品牌选择：红米等千元机品牌，或最新款二手苹果SE</p>
-</li>
-<li><p>容量选择：128G</p>
-</li>
-<li><p>内存选择：6G或8G以上</p>
-</li>
-<li><p>要求：续航时间长，运行聊天、购物、视频软件不卡顿</p>
-</li>
-<li><p>价格区间：1500~2300</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/23/%E6%89%8B%E6%9C%BA%E9%80%89%E5%9E%8B/" data-id="clgnap5j1000cd8oo8s9hh6j3" data-title="手机选型" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document-galaxy/tags/%E6%95%B0%E7%A0%81/" rel="tag">数码</a></li></ul>
-
     </footer>
   </div>
   
@@ -899,7 +878,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/11/">November 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/11/">November 2022</a></li></ul>
     </div>
   </div>
 
@@ -912,7 +891,11 @@
       <ul>
         
           <li>
-            <a href="/document-galaxy/2023/04/19/hello-world/">Hello World</a>
+            <a href="/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/">豪豪实操</a>
+          </li>
+        
+          <li>
+            <a href="/document-galaxy/2023/05/15/hello-world/">Hello World</a>
           </li>
         
           <li>
@@ -925,10 +908,6 @@
         
           <li>
             <a href="/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/">程序流程</a>
-          </li>
-        
-          <li>
-            <a href="/document-galaxy/2023/01/04/project-uchuang-signalPlatform/">优创信号机平台</a>
           </li>
         
       </ul>
