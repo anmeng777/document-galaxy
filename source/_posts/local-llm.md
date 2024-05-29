@@ -5,16 +5,6 @@ tags:
 categories: llm
 ---
 
-o
-
-
-
-
-
-
-
-
-
 
 
 本地安装ollama，模型可以选择llama3，api兼容openai-chatgpt。
