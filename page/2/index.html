@@ -71,6 +71,96 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-electron-vue项目搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/document-galaxy/2023/01/12/electron-vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="article-date">
+  <time class="dt-published" datetime="2023-01-12T13:57:29.000Z" itemprop="datePublished">2023-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/document-galaxy/2023/01/12/electron-vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">electron-vue项目搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h1><ul>
+<li>node版本：v14.13.1</li>
+<li>npm版本：6.14.8</li>
+<li>vue-cli版本：5.0.3</li>
+<li>vue：2.x</li>
+</ul>
+<h1 id="vue项目创建"><a href="#vue项目创建" class="headerlink" title="vue项目创建"></a>vue项目创建</h1><p>使用vue-cli来创建一个vue 2项目：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create hello-world</span><br></pre></td></tr></table></figure>
+
+<p>提示时，选择vue2。</p>
+<p>创建成功后，进入到项目文件夹，执行启动命令进行测试。</p>
+<h1 id="electron-builder插件集成"><a href="#electron-builder插件集成" class="headerlink" title="electron-builder插件集成"></a>electron-builder插件集成</h1><blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/dfcf2a6a497c">https://www.jianshu.com/p/dfcf2a6a497c</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1dbb96bc8f37">https://www.jianshu.com/p/1dbb96bc8f37</a></p>
+</blockquote>
+<p>停止项目运行。</p>
+<p>进入到项目文件夹，执行以下命令来启动vue项目管理器：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue ui</span><br></pre></td></tr></table></figure>
+
+<p>左下角点击三个点，选择vue project manager，然后导入本项目。</p>
+<p>然后进入插件页面，点击添加插件按钮，搜索”vue-cli-plugin-electron-builder“，选择之后，点击安装。</p>
+<p>安装完成后，点击“安装完成”，（必须要点击安装完成，否则项目架构会出问题）</p>
+<h1 id="linux系统搭建node环境"><a href="#linux系统搭建node环境" class="headerlink" title="linux系统搭建node环境"></a>linux系统搭建node环境</h1><blockquote>
+<p>Linux arm也通用</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zt88cn/p/12023706.html">https://www.cnblogs.com/zt88cn/p/12023706.html</a></p>
+</blockquote>
+<ol>
+<li><p>下载node.js，网址：nodejs.cn</p>
+</li>
+<li><p>解压到某目录，例如解压后node目录为：&#x2F;home&#x2F;orangepi&#x2F;node-v12.13.1-linux-armv7l</p>
+</li>
+<li><p>执行以下命令 <code>sudo ln /home/orangepi/node-v12.13.1-linux-armv7l/bin/node /usr/local/bin/node</code></p>
+</li>
+<li><p>执行以下命令<code>sudo ln -s /home/orangepi/node-v12.13.1-linux-armv7l/lib/node_modules/npm/bin/npm-cli.js  /usr/local/bin/npm</code></p>
+</li>
+<li><p>执行node -v和npm -v查看版本</p>
+</li>
+</ol>
+<h1 id="设置electron镜像"><a href="#设置electron镜像" class="headerlink" title="设置electron镜像"></a>设置electron镜像</h1><p>npm config set electron_mirror <a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/electron/">https://repo.huaweicloud.com/electron/</a> </p>
+<p>npm install -g electron</p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><h2 id="arm-打包报错：snapcraft"><a href="#arm-打包报错：snapcraft" class="headerlink" title="arm 打包报错：snapcraft"></a>arm 打包报错：snapcraft</h2><p>增加打包配置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">linux</span>: &#123;</span><br><span class="line">	<span class="attr">tartget</span>: [</span><br><span class="line">		<span class="string">&quot;AppImage&quot;</span></span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="linux下使用ffi-napi时，npm-install报错问题"><a href="#linux下使用ffi-napi时，npm-install报错问题" class="headerlink" title="linux下使用ffi-napi时，npm install报错问题"></a>linux下使用ffi-napi时，npm install报错问题</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000042601075?utm_source=sf-similar-question">https://segmentfault.com/q/1010000042601075?utm_source=sf-similar-question</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_33304777/article/details/116893532">https://blog.csdn.net/weixin_33304777/article/details/116893532</a></p>
+</blockquote>
+<p>报错：gyp ERR! stack Error: not found: make</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum i gcc-c++</span><br><span class="line">sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
+
+<p>执行第一行命令后没有成功，执行完第二个后可以。可能只执行第二个就行</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/12/electron-vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" data-id="clwrgg1550002ffqc0wyqax1h" data-title="electron-vue项目搭建" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-程序流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/" class="article-date">
@@ -141,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/" data-id="clwrga8rp000ldzom0kt9e7e4" data-title="程序流程" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/09/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B/" data-id="clwrgg15k000offqc5okoeayc" data-title="程序流程" class="article-share-link">Share</a>
       
       
       
@@ -248,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-signalPlatform/" data-id="clwrga8ri000bdzom7l4a3fle" data-title="优创信号机平台" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-signalPlatform/" data-id="clwrgg15b000cffqc99b4apy6" data-title="优创信号机平台" class="article-share-link">Share</a>
       
       
       
@@ -314,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-autoCleanCard/" data-id="clwrga8rh0007dzomalwr4xmt" data-title="优创自动清卡软件" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/01/04/project-uchuang-autoCleanCard/" data-id="clwrgg15b000bffqccipg8191" data-title="优创自动清卡软件" class="article-share-link">Share</a>
       
       
       
@@ -465,7 +555,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/30/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" data-id="clwrga8rv000udzom0t82f67y" data-title="项目部署" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/30/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" data-id="clwrgg15p000xffqcgwb6azb6" data-title="项目部署" class="article-share-link">Share</a>
       
       
       
@@ -538,7 +628,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/29/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clwrga8rn000jdzome447492g" data-title="开发环境" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/29/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-id="clwrgg15j000lffqc1gi4ht18" data-title="开发环境" class="article-share-link">Share</a>
       
       
       
@@ -585,7 +675,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/28/%E8%A6%81%E5%81%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/" data-id="clwrga8rq000odzomgw7d9ic4" data-title="要做的程序" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/12/28/%E8%A6%81%E5%81%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/" data-id="clwrgg15n000rffqc1zaq1b8r" data-title="要做的程序" class="article-share-link">Share</a>
       
       
       
@@ -631,7 +721,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/11/18/Drone-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E5%8A%9F%E8%83%BD%E6%90%AD%E5%BB%BA%E4%B8%8E%E6%B5%8B%E8%AF%95/" data-id="clwrga8rb0001dzomfnn2domv" data-title="Drone-自动化部署功能搭建与测试" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/11/18/Drone-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E5%8A%9F%E8%83%BD%E6%90%AD%E5%BB%BA%E4%B8%8E%E6%B5%8B%E8%AF%95/" data-id="clwrgg1530001ffqc2fnjdgnj" data-title="Drone-自动化部署功能搭建与测试" class="article-share-link">Share</a>
       
       
       
@@ -710,7 +800,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2022/11/15/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/" data-id="clwrga8ro000kdzomcxaabggg" data-title="程序学习教程" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2022/11/15/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/" data-id="clwrgg15j000mffqc6ryzdpxg" data-title="程序学习教程" class="article-share-link">Share</a>
       
       
       
@@ -739,7 +829,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/document-galaxy/categories/llm/">llm</a></li><li class="category-list-item"><a class="category-list-link" href="/document-galaxy/categories/%E7%A8%8B%E5%BA%8F/">程序</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/document-galaxy/categories/%E7%A8%8B%E5%BA%8F/%E6%95%99%E7%A8%8B/">教程</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/document-galaxy/categories/llm/">llm</a></li><li class="category-list-item"><a class="category-list-link" href="/document-galaxy/categories/metahuman/">metahuman</a></li><li class="category-list-item"><a class="category-list-link" href="/document-galaxy/categories/%E7%A8%8B%E5%BA%8F/">程序</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/document-galaxy/categories/%E7%A8%8B%E5%BA%8F/%E6%95%99%E7%A8%8B/">教程</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -781,6 +871,10 @@
       <ul>
         
           <li>
+            <a href="/document-galaxy/2024/05/29/metahuman-tutorial/">虚拟数字人搭建教程 -- 基于ue5和本地大模型</a>
+          </li>
+        
+          <li>
             <a href="/document-galaxy/2024/05/29/local-llm/">本地运行大模型</a>
           </li>
         
@@ -794,10 +888,6 @@
         
           <li>
             <a href="/document-galaxy/2023/05/31/web%E5%B0%8F%E7%BB%84-%E5%B7%A5%E4%BD%9C%E5%88%86%E5%B7%A5/">web小组-工作分工</a>
-          </li>
-        
-          <li>
-            <a href="/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/">豪豪实操</a>
           </li>
         
       </ul>
