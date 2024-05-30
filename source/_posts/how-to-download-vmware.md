@@ -21,7 +21,7 @@ Google搜寻了一下，国产csdn垃圾论坛不是提供了失效的下载链�
 
 
 
-终于搜到了reddit的一篇问答https://www.reddit.com/r/vmware/comments/1clwukj/help_for_download_vmware_workstation_175_pro/，解决了我的问题。
+终于搜到了reddit的一篇问答 https://www.reddit.com/r/vmware/comments/1clwukj/help_for_download_vmware_workstation_175_pro/ ，解决了我的问题。
 
 ![image-20240530091415857](https://pic.tele.anmeng.tech/file/90cf9da2f17d4ea7e9a42.png)
 
@@ -33,7 +33,7 @@ Google搜寻了一下，国产csdn垃圾论坛不是提供了失效的下载链�
 
 
 
-里面提供了一个文件服务器地址 : https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.5.1/23298084/windows/core/，非常好用，赶紧下载备份最新版的Windows、Linux、mac版本。
+里面提供了一个文件服务器地址 :  https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.5.1/23298084/windows/core/ ，非常好用，赶紧下载备份最新版的Windows、Linux、mac版本。
 
 
 
