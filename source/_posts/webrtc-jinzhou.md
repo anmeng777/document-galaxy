@@ -32,3 +32,11 @@ L --> R
 M --> R
 ```
 
+
+
+## webrtc协议
+
+### 1. 加入房间
+
+请求信息： event: join data: { "roomId": 房间号, "userName": 加入用户名称, "userId": 加入用户 id } 响应信息： event: joined （自己成功加入房间的响应信息） data: { "roomId", //房间号, "userName", //加入用户名称, "sessionId", //sessionId, "roomSize", //房间用户数, ["userId1", "userId2", "userId3"] //房间用户列表 } event: otherjoin （其他成员成功加入房间的响应信息） data: { "roomId", //房间号, "userId", //加入用户 id "userName" //加入用户名称, } event: full （房间已满的响应信息） data: { "roomId", //房间号, "sessionId", //sessionId }
+
