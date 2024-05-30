@@ -14,7 +14,7 @@
 <meta property="og:description" content="主进程12345678910111213141516171819202122flowchart LRA[初始化] --&gt; B[监听求助键]B --&gt; C[收到求助键信号]C --&gt; D[发送HTTP请求 &#x2F;monitor&#x2F;videoRqt]A --&gt; E[建立wss通信]E --&gt; F[每分钟发送心跳]E --&gt; G[监听音视频对话控制消息]G --&gt; H">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-30T13:31:44.000Z">
-<meta property="article:modified_time" content="2024-05-30T06:06:48.360Z">
+<meta property="article:modified_time" content="2024-05-30T06:38:17.936Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -98,10 +98,13 @@
         <h2 id="主进程"><a href="#主进程" class="headerlink" title="主进程"></a>主进程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">A[初始化] --&gt; B[监听求助键]</span><br><span class="line">B --&gt; C[收到求助键信号]</span><br><span class="line">C --&gt; D[发送HTTP请求 /monitor/videoRqt]</span><br><span class="line"></span><br><span class="line">A --&gt; E[建立wss通信]</span><br><span class="line">E --&gt; F[每分钟发送心跳]</span><br><span class="line">E --&gt; G[监听音视频对话控制消息]</span><br><span class="line">G --&gt; H[收到&#x27;开始音视频对话&#x27;消息]</span><br><span class="line">G --&gt; I[收到&#x27;结束音视频对话&#x27;消息]</span><br><span class="line">G --&gt; J[收到&#x27;切换音视频对话&#x27;消息]</span><br><span class="line">G --&gt; K[收到&#x27;音视频对话心跳&#x27;消息]</span><br><span class="line">G --&gt; L[收到&#x27;强制结束对话&#x27;消息]</span><br><span class="line">G --&gt; M[收到&#x27;取消视频对话请求&#x27;消息]</span><br><span class="line">H --&gt; O[加载对讲流程\n包括建立信令服务器连接\n加入房间等]</span><br><span class="line">O --&gt; P[接通]</span><br><span class="line">I --&gt; R[挂断对讲]</span><br><span class="line">J --&gt; S[切换摄像头]</span><br><span class="line">K --&gt; Q[如果当前处于对讲中\n且连续15秒\n没有收到心跳]</span><br><span class="line">Q --&gt; R</span><br><span class="line">L --&gt; R</span><br><span class="line">M --&gt; R</span><br></pre></td></tr></table></figure>
 
 
+
+<h2 id="webrtc协议"><a href="#webrtc协议" class="headerlink" title="webrtc协议"></a>webrtc协议</h2><h3 id="1-加入房间"><a href="#1-加入房间" class="headerlink" title="1. 加入房间"></a>1. 加入房间</h3><p>请求信息： event: join data: { “roomId”: 房间号, “userName”: 加入用户名称, “userId”: 加入用户 id } 响应信息： event: joined （自己成功加入房间的响应信息） data: { “roomId”, &#x2F;&#x2F;房间号, “userName”, &#x2F;&#x2F;加入用户名称, “sessionId”, &#x2F;&#x2F;sessionId, “roomSize”, &#x2F;&#x2F;房间用户数, [“userId1”, “userId2”, “userId3”] &#x2F;&#x2F;房间用户列表 } event: otherjoin （其他成员成功加入房间的响应信息） data: { “roomId”, &#x2F;&#x2F;房间号, “userId”, &#x2F;&#x2F;加入用户 id “userName” &#x2F;&#x2F;加入用户名称, } event: full （房间已满的响应信息） data: { “roomId”, &#x2F;&#x2F;房间号, “sessionId”, &#x2F;&#x2F;sessionId }</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/webrtc-jinzhou/" data-id="clwsurpff000hfbq6gckt3w8q" data-title="晋州音视频对讲梳理" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/webrtc-jinzhou/" data-id="clwsvw7k2000ke4puaym55loa" data-title="晋州音视频对讲梳理" class="article-share-link">Share</a>
       
       
       
@@ -110,6 +113,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/document-galaxy/2024/05/30/tech-choice/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          技术选型
+        
+      </div>
+    </a>
   
   
     <a href="/document-galaxy/2024/05/30/how-to-download-vmware/" id="article-nav-older" class="article-nav-link-wrap">
@@ -173,6 +185,10 @@
       <ul>
         
           <li>
+            <a href="/document-galaxy/2024/05/30/tech-choice/">技术选型</a>
+          </li>
+        
+          <li>
             <a href="/document-galaxy/2024/05/30/webrtc-jinzhou/">晋州音视频对讲梳理</a>
           </li>
         
@@ -186,10 +202,6 @@
         
           <li>
             <a href="/document-galaxy/2024/05/29/metahuman-tutorial/">虚拟数字人搭建教程 -- 基于ue5和本地大模型</a>
-          </li>
-        
-          <li>
-            <a href="/document-galaxy/2024/05/29/local-llm/">本地运行大模型</a>
           </li>
         
       </ul>
