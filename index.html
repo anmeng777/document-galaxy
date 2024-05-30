@@ -71,6 +71,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-webrtc-jinzhou" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/document-galaxy/2024/05/30/webrtc-jinzhou/" class="article-date">
+  <time class="dt-published" datetime="2024-05-30T13:31:44.000Z" itemprop="datePublished">2024-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/document-galaxy/2024/05/30/webrtc-jinzhou/">晋州音视频对讲梳理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="主进程"><a href="#主进程" class="headerlink" title="主进程"></a>主进程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">A[初始化] --&gt; B[监听求助键]</span><br><span class="line">B --&gt; C[收到求助键信号]</span><br><span class="line">C --&gt; D[发送HTTP请求 /monitor/videoRqt]</span><br><span class="line"></span><br><span class="line">A --&gt; E[建立wss通信]</span><br><span class="line">E --&gt; F[每分钟发送心跳]</span><br><span class="line">E --&gt; G[监听音视频对话控制消息]</span><br><span class="line">G --&gt; H[收到&#x27;开始音视频对话&#x27;消息]</span><br><span class="line">G --&gt; I[收到&#x27;结束音视频对话&#x27;消息]</span><br><span class="line">G --&gt; J[收到&#x27;切换音视频对话&#x27;消息]</span><br><span class="line">G --&gt; K[收到&#x27;音视频对话心跳&#x27;消息]</span><br><span class="line">G --&gt; L[收到&#x27;强制结束对话&#x27;消息]</span><br><span class="line">G --&gt; M[收到&#x27;取消视频对话请求&#x27;消息]</span><br><span class="line">H --&gt; O[加载对讲流程\n包括建立信令服务器连接\n加入房间等]</span><br><span class="line">O --&gt; P[接通]</span><br><span class="line">I --&gt; R[挂断对讲]</span><br><span class="line">J --&gt; S[切换摄像头]</span><br><span class="line">K --&gt; Q[如果当前处于对讲中\n且连续15秒\n没有收到心跳]</span><br><span class="line">Q --&gt; R</span><br><span class="line">L --&gt; R</span><br><span class="line">M --&gt; R</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/webrtc-jinzhou/" data-id="clwsurpff000hfbq6gckt3w8q" data-title="晋州音视频对讲梳理" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-how-to-download-vmware" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/document-galaxy/2024/05/30/how-to-download-vmware/" class="article-date">
@@ -109,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/how-to-download-vmware/" data-id="clwskjpjv0006dinf38ia6yx8" data-title="如何下载VMware虚拟机软件" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/how-to-download-vmware/" data-id="clwsurpf90007fbq6dgzx6nbc" data-title="如何下载VMware虚拟机软件" class="article-share-link">Share</a>
       
       
       
@@ -124,7 +164,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/document-galaxy/2024/05/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-05-30T01:20:39.412Z" itemprop="datePublished">2024-05-30</time>
+  <time class="dt-published" datetime="2024-05-30T06:06:48.360Z" itemprop="datePublished">2024-05-30</time>
 </a>
     
   </div>
@@ -152,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/hello-world/" data-id="clwskjpjq0002dinfcky3bfza" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/hello-world/" data-id="clwsurpf70004fbq6grnybzz2" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -204,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/metahuman-tutorial/" data-id="clwskjpjy000bdinf6zkhe43q" data-title="虚拟数字人搭建教程 -- 基于ue5和本地大模型" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/metahuman-tutorial/" data-id="clwsurpfb000bfbq6a8c6bbqq" data-title="虚拟数字人搭建教程 -- 基于ue5和本地大模型" class="article-share-link">Share</a>
       
       
       
@@ -250,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/local-llm/" data-id="clwskjpjw0007dinfaclfbtm1" data-title="本地运行大模型" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/local-llm/" data-id="clwsurpf80006fbq66ec49c5g" data-title="本地运行大模型" class="article-share-link">Share</a>
       
       
       
@@ -288,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/08/01/signal-study/" data-id="clwskjpk2000gdinf87701rk0" data-title="signal-study" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/08/01/signal-study/" data-id="clwsurpfd000dfbq65c5fcg80" data-title="signal-study" class="article-share-link">Share</a>
       
       
       
@@ -400,7 +440,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/31/web%E5%B0%8F%E7%BB%84-%E5%B7%A5%E4%BD%9C%E5%88%86%E5%B7%A5/" data-id="clwskjpk3000hdinf04nd5nwa" data-title="web小组-工作分工" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/31/web%E5%B0%8F%E7%BB%84-%E5%B7%A5%E4%BD%9C%E5%88%86%E5%B7%A5/" data-id="clwsurpfg000kfbq6a6s04cxk" data-title="web小组-工作分工" class="article-share-link">Share</a>
       
       
       
@@ -488,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clwskjpke000wdinfd4vegchh" data-title="豪豪实操" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clwsurpfn000xfbq65pu09w5i" data-title="豪豪实操" class="article-share-link">Share</a>
       
       
       
@@ -548,7 +588,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/04/20/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%AF%B9%E8%AE%B2%E5%8D%A1%E6%9C%BA%E7%AB%AF%E5%8D%87%E7%BA%A7%E8%AF%B4%E6%98%8Ev0-2-9/" data-id="clwskjpkf000xdinfbbchem0g" data-title="音视频对讲卡机端升级说明v0.2.9" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/04/20/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%AF%B9%E8%AE%B2%E5%8D%A1%E6%9C%BA%E7%AB%AF%E5%8D%87%E7%BA%A7%E8%AF%B4%E6%98%8Ev0-2-9/" data-id="clwsurpfo000yfbq6h65wfgom" data-title="音视频对讲卡机端升级说明v0.2.9" class="article-share-link">Share</a>
       
       
       
@@ -630,62 +670,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/03/28/%E4%BD%B3%E6%98%8E%E5%B7%A5%E4%BD%9C%E4%BA%A4%E6%8E%A5/" data-id="clwskjpk5000kdinfaw3f9nqv" data-title="佳明工作交接" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-安卓adb常用指令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/document-galaxy/2023/03/01/%E5%AE%89%E5%8D%93adb%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-date">
-  <time class="dt-published" datetime="2023-03-01T09:56:00.000Z" itemprop="datePublished">2023-03-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/document-galaxy/2023/03/01/%E5%AE%89%E5%8D%93adb%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">安卓adb常用指令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="查看所有已安装的应用列表："><a href="#查看所有已安装的应用列表：" class="headerlink" title="查看所有已安装的应用列表："></a>查看所有已安装的应用列表：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm list packages</span><br></pre></td></tr></table></figure>
-
-<p>找到包名：com.xxx.yyy.zzz</p>
-<h2 id="卸载软件："><a href="#卸载软件：" class="headerlink" title="卸载软件："></a>卸载软件：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall com.xxx.yyy.zzz</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="安装软件："><a href="#安装软件：" class="headerlink" title="安装软件："></a>安装软件：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install xxx.apk</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="覆盖安装："><a href="#覆盖安装：" class="headerlink" title="覆盖安装："></a>覆盖安装：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install -r xxx.apk</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="打开软件："><a href="#打开软件：" class="headerlink" title="打开软件："></a>打开软件：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start com.xxx.yyy.zzz/.MainActivity</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/03/01/%E5%AE%89%E5%8D%93adb%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clwskjpk5000ldinf09dvg2z7" data-title="安卓adb常用指令" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/03/28/%E4%BD%B3%E6%98%8E%E5%B7%A5%E4%BD%9C%E4%BA%A4%E6%8E%A5/" data-id="clwsurpfh000lfbq64148ht8e" data-title="佳明工作交接" class="article-share-link">Share</a>
       
       
       
@@ -701,7 +686,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/document-galaxy/page/2/">2</a><a class="extend next" rel="next" href="/document-galaxy/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/document-galaxy/page/2/">2</a><a class="page-number" href="/document-galaxy/page/3/">3</a><a class="extend next" rel="next" href="/document-galaxy/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -754,6 +739,10 @@
       <ul>
         
           <li>
+            <a href="/document-galaxy/2024/05/30/webrtc-jinzhou/">晋州音视频对讲梳理</a>
+          </li>
+        
+          <li>
             <a href="/document-galaxy/2024/05/30/how-to-download-vmware/">如何下载VMware虚拟机软件</a>
           </li>
         
@@ -767,10 +756,6 @@
         
           <li>
             <a href="/document-galaxy/2024/05/29/local-llm/">本地运行大模型</a>
-          </li>
-        
-          <li>
-            <a href="/document-galaxy/2023/08/01/signal-study/">signal-study</a>
           </li>
         
       </ul>
