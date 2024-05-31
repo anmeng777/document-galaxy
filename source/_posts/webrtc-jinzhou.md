@@ -34,9 +34,26 @@ M --> R
 
 
 
-## webrtc协议
+## 技术实现
 
-### 1. 加入房间
+原有程序基础上：
 
-请求信息： event: join data: { "roomId": 房间号, "userName": 加入用户名称, "userId": 加入用户 id } 响应信息： event: joined （自己成功加入房间的响应信息） data: { "roomId", //房间号, "userName", //加入用户名称, "sessionId", //sessionId, "roomSize", //房间用户数, ["userId1", "userId2", "userId3"] //房间用户列表 } event: otherjoin （其他成员成功加入房间的响应信息） data: { "roomId", //房间号, "userId", //加入用户 id "userName" //加入用户名称, } event: full （房间已满的响应信息） data: { "roomId", //房间号, "sessionId", //sessionId }
+* 增加晋州专属通话页面
+
+* 配置页面
+  * 增加晋州协议选项
+  * 如果选择了晋州协议
+    * 隐藏：ws连接
+    * 增加：
+      * 晋州求助http url
+      * 晋州websocket url
+      * 增加车道号等
+    * 跳转对讲的时候不进入原有通话页面，而是晋州新页面
+    * 程序启动时需要判断，如果是晋州协议，自动跳转到晋州通话页面，否则还是原有通话页面
+
+* 在background中监听UDP数据包，如果收到了就发送http请求（已实现）
+
+* 在background中建立晋州ws连接，如果收到通话消息了就调用前端方法
+
+
 
