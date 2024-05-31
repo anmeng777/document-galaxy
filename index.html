@@ -71,6 +71,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/document-galaxy/2024/05/31/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-05-31T00:27:24.028Z" itemprop="datePublished">2024-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/document-galaxy/2024/05/31/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        这里有东西被加密了，需要输入密码查看哦。
+        
+          <p class="article-more-link">
+            <a href="/document-galaxy/2024/05/31/hello-world/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/31/hello-world/" data-id="clwty32ly0004dnpz299k8nh7" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document-galaxy/tags/galaxy/" rel="tag">galaxy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-tech-choice" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/document-galaxy/2024/05/30/tech-choice/" class="article-date">
@@ -109,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/tech-choice/" data-id="clwsvw7k1000he4pu7a5dfm0c" data-title="技术选型" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/tech-choice/" data-id="clwty32m6000hdnpz1zixdhfh" data-title="技术选型" class="article-share-link">Share</a>
       
       
       
@@ -147,12 +192,37 @@
 
 
 
-<h2 id="webrtc协议"><a href="#webrtc协议" class="headerlink" title="webrtc协议"></a>webrtc协议</h2><h3 id="1-加入房间"><a href="#1-加入房间" class="headerlink" title="1. 加入房间"></a>1. 加入房间</h3><p>请求信息： event: join data: { “roomId”: 房间号, “userName”: 加入用户名称, “userId”: 加入用户 id } 响应信息： event: joined （自己成功加入房间的响应信息） data: { “roomId”, &#x2F;&#x2F;房间号, “userName”, &#x2F;&#x2F;加入用户名称, “sessionId”, &#x2F;&#x2F;sessionId, “roomSize”, &#x2F;&#x2F;房间用户数, [“userId1”, “userId2”, “userId3”] &#x2F;&#x2F;房间用户列表 } event: otherjoin （其他成员成功加入房间的响应信息） data: { “roomId”, &#x2F;&#x2F;房间号, “userId”, &#x2F;&#x2F;加入用户 id “userName” &#x2F;&#x2F;加入用户名称, } event: full （房间已满的响应信息） data: { “roomId”, &#x2F;&#x2F;房间号, “sessionId”, &#x2F;&#x2F;sessionId }</p>
+<h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><p>原有程序基础上：</p>
+<ul>
+<li><p>增加晋州专属通话页面</p>
+</li>
+<li><p>配置页面</p>
+<ul>
+<li>增加晋州协议选项</li>
+<li>如果选择了晋州协议<ul>
+<li>隐藏：ws连接</li>
+<li>增加：<ul>
+<li>晋州求助http url</li>
+<li>晋州websocket url</li>
+<li>增加车道号等</li>
+</ul>
+</li>
+<li>跳转对讲的时候不进入原有通话页面，而是晋州新页面</li>
+<li>程序启动时需要判断，如果是晋州协议，自动跳转到晋州通话页面，否则还是原有通话页面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在background中监听UDP数据包，如果收到了就发送http请求（已实现）</p>
+</li>
+<li><p>在background中建立晋州ws连接，如果收到通话消息了就调用前端方法</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/webrtc-jinzhou/" data-id="clwsvw7k2000ke4puaym55loa" data-title="晋州音视频对讲梳理" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/webrtc-jinzhou/" data-id="clwty32m7000kdnpzh6bq4ah5" data-title="晋州音视频对讲梳理" class="article-share-link">Share</a>
       
       
       
@@ -202,55 +272,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/how-to-download-vmware/" data-id="clwsvw7jt0006e4pue899fd9k" data-title="如何下载VMware虚拟机软件" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/how-to-download-vmware/" data-id="clwty32lz0006dnpz2i5raj3x" data-title="如何下载VMware虚拟机软件" class="article-share-link">Share</a>
       
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/document-galaxy/2024/05/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-05-30T06:38:17.936Z" itemprop="datePublished">2024-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/document-galaxy/2024/05/30/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        这里有东西被加密了，需要输入密码查看哦。
-        
-          <p class="article-more-link">
-            <a href="/document-galaxy/2024/05/30/hello-world/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/hello-world/" data-id="clwsvw7jr0004e4pu7yca4sfq" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document-galaxy/tags/galaxy/" rel="tag">galaxy</a></li></ul>
-
     </footer>
   </div>
   
@@ -286,6 +311,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>ue5创建项目，创建人物、创建摄像机等基础内容</p>
+<p>参考教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vG411k7hs">https://www.bilibili.com/video/BV1vG411k7hs</a></p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
 <li>httpgpt：需要修改参数调整url和模型名称适配到本地ai</li>
 <li>文字转语音：vits</li>
@@ -293,11 +319,21 @@
 <li>本地大模型：RWKV</li>
 </ul>
 <p>口型</p>
+<h2 id="过程记录"><a href="#过程记录" class="headerlink" title="过程记录"></a>过程记录</h2><h3 id="大模型接入"><a href="#大模型接入" class="headerlink" title="大模型接入"></a>大模型接入</h3><p>​		下载了视频中说的RWKV软件，感觉非常难用，对环境侵入也挺多的，因为想要使用他会自行给你安装python环境，还下载了许多包。由于对python不是很熟悉，感觉这种软件使用的体验非常差劲。</p>
+<p>​		安装完成后，下载了同视频中一样的最小中文模型进行测试时发现，下载完成后，在聊天界面中却无法选择已下载的模型。还需要在聊天中选择模型，点击启动时提示没有模型需要下载，这时候下载才行。如果是这样的话，那么模型管理界面的存在就显得多余且让人混乱了。而且如果模型开始下载了只能进行暂停操作，无法取消。</p>
+<p>​		我感觉还是使用ollama吧，ollama的使用体验真的是非常丝滑。</p>
+<p>​		教程反复强调他们使用的httpgpt插件是基于原插件开源代码的修改版本，增加了可以自定义chatgpt的base url的功能。据此可以将本地适配了openai格式的大模型进行接入。</p>
+<p>​		我根据他的思路，GitHub找到了这个插件 <a target="_blank" rel="noopener" href="https://github.com/lucoiso/UEHttpGPT">https://github.com/lucoiso/UEHttpGPT</a> ，下载了同视频相近的版本1.5.1后，手动在插件中将openai域名进行了替换。</p>
+<p>​		可是在蓝图中进行接入测试，得到了失望的结果，输入文字后只会进入到蓝图步骤的“error received”输出。盲猜除了替换域名外，可能还需要修改https为http的请求方式。</p>
+<blockquote>
+<p>后来测试成功了，使用的还是蓝图插件方式，后来会看日志了，发现虽然改了代码，但是日志报错还是调用chatgpt官方api，经过对比发现插件其实会被ue5编译，我将编译结果删掉后重新打开ue5重新编译后就改过来了。而且虽然ollama兼容openai格式，但是却无法被插件接受，目前还是使用了RWKV测试成功。</p>
+<p>后续还是将httpgpt改成http请求，将rwkv改为ollama，以便于更好的兼容性。</p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/metahuman-tutorial/" data-id="clwsvw7jv000be4pu2jdc0r7f" data-title="虚拟数字人搭建教程 -- 基于ue5和本地大模型" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/metahuman-tutorial/" data-id="clwty32m2000bdnpz6prmg197" data-title="虚拟数字人搭建教程 -- 基于ue5和本地大模型" class="article-share-link">Share</a>
       
       
       
@@ -343,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/local-llm/" data-id="clwsvw7jt0007e4pu9y3i1hcj" data-title="本地运行大模型" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/local-llm/" data-id="clwty32m00007dnpz5ub588hy" data-title="本地运行大模型" class="article-share-link">Share</a>
       
       
       
@@ -381,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/08/01/signal-study/" data-id="clwsvw7jz000ge4pu3nik3rye" data-title="signal-study" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/08/01/signal-study/" data-id="clwty32m5000gdnpz35yv6rvn" data-title="signal-study" class="article-share-link">Share</a>
       
       
       
@@ -493,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/31/web%E5%B0%8F%E7%BB%84-%E5%B7%A5%E4%BD%9C%E5%88%86%E5%B7%A5/" data-id="clwsvw7k3000le4pubz75f0rp" data-title="web小组-工作分工" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/31/web%E5%B0%8F%E7%BB%84-%E5%B7%A5%E4%BD%9C%E5%88%86%E5%B7%A5/" data-id="clwty32m7000ldnpzaubaeig2" data-title="web小组-工作分工" class="article-share-link">Share</a>
       
       
       
@@ -581,7 +617,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clwsvw7ke000ye4pu0d0348lc" data-title="豪豪实操" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/05/15/%E8%B1%AA%E8%B1%AA%E5%AE%9E%E6%93%8D/" data-id="clwty32mf000ydnpz4bg7bn8g" data-title="豪豪实操" class="article-share-link">Share</a>
       
       
       
@@ -641,7 +677,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2023/04/20/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%AF%B9%E8%AE%B2%E5%8D%A1%E6%9C%BA%E7%AB%AF%E5%8D%87%E7%BA%A7%E8%AF%B4%E6%98%8Ev0-2-9/" data-id="clwsvw7ke000ze4pudyhpdztf" data-title="音视频对讲卡机端升级说明v0.2.9" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2023/04/20/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%AF%B9%E8%AE%B2%E5%8D%A1%E6%9C%BA%E7%AB%AF%E5%8D%87%E7%BA%A7%E8%AF%B4%E6%98%8Ev0-2-9/" data-id="clwty32mf000zdnpz4ayc5si3" data-title="音视频对讲卡机端升级说明v0.2.9" class="article-share-link">Share</a>
       
       
       
@@ -710,6 +746,10 @@
       <ul>
         
           <li>
+            <a href="/document-galaxy/2024/05/31/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/document-galaxy/2024/05/30/tech-choice/">技术选型</a>
           </li>
         
@@ -719,10 +759,6 @@
         
           <li>
             <a href="/document-galaxy/2024/05/30/how-to-download-vmware/">如何下载VMware虚拟机软件</a>
-          </li>
-        
-          <li>
-            <a href="/document-galaxy/2024/05/30/hello-world/">Hello World</a>
           </li>
         
           <li>
