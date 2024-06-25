@@ -20,13 +20,15 @@ ue5创建项目，创建人物、创建摄像机等基础内容
 * 语音识别：jvoice
 * 本地大模型：RWKV
 
+* 口型
 
 
 
+网上找的其他教程（ https://blog.csdn.net/qq_65108854/article/details/134281797 ）的插件推荐
 
-口型
-
-
+* http：VaRest
+* 文字转语音及合成口型：Metahuman SDK
+* 
 
 
 
