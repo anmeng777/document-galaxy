@@ -6,15 +6,15 @@
   
   <title>虚拟数字人搭建教程 -- 基于ue5和本地大模型 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="ue5创建项目，创建人物、创建摄像机等基础内容 参考教程：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vG411k7hs 插件 httpgpt：需要修改参数调整url和模型名称适配到本地ai 文字转语音：vits 语音识别：jvoice 本地大模型：RWKV  口型 过程记录大模型接入​		下载了视频中说的RWKV软件，感觉非常难用，对环境侵入也挺多的，因为想要使用他会自行">
+  <meta name="description" content="ue5创建项目，创建人物、创建摄像机等基础内容 参考教程：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vG411k7hs 插件 httpgpt：需要修改参数调整url和模型名称适配到本地ai  文字转语音：vits  语音识别：jvoice  本地大模型：RWKV  口型   网上找的其他教程（ https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_65108854&#x2F;artic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟数字人搭建教程 -- 基于ue5和本地大模型">
 <meta property="og:url" content="https://anmeng777.github.io/document-galaxy/2024/05/29/metahuman-tutorial/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="ue5创建项目，创建人物、创建摄像机等基础内容 参考教程：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vG411k7hs 插件 httpgpt：需要修改参数调整url和模型名称适配到本地ai 文字转语音：vits 语音识别：jvoice 本地大模型：RWKV  口型 过程记录大模型接入​		下载了视频中说的RWKV软件，感觉非常难用，对环境侵入也挺多的，因为想要使用他会自行">
+<meta property="og:description" content="ue5创建项目，创建人物、创建摄像机等基础内容 参考教程：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1vG411k7hs 插件 httpgpt：需要修改参数调整url和模型名称适配到本地ai  文字转语音：vits  语音识别：jvoice  本地大模型：RWKV  口型   网上找的其他教程（ https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_65108854&#x2F;artic">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-29T14:34:50.000Z">
-<meta property="article:modified_time" content="2024-05-31T00:27:24.028Z">
+<meta property="article:modified_time" content="2024-06-25T02:04:53.495Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -102,12 +102,23 @@
         <p>ue5创建项目，创建人物、创建摄像机等基础内容</p>
 <p>参考教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vG411k7hs">https://www.bilibili.com/video/BV1vG411k7hs</a></p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>httpgpt：需要修改参数调整url和模型名称适配到本地ai</li>
-<li>文字转语音：vits</li>
-<li>语音识别：jvoice</li>
-<li>本地大模型：RWKV</li>
+<li><p>httpgpt：需要修改参数调整url和模型名称适配到本地ai</p>
+</li>
+<li><p>文字转语音：vits</p>
+</li>
+<li><p>语音识别：jvoice</p>
+</li>
+<li><p>本地大模型：RWKV</p>
+</li>
+<li><p>口型</p>
+</li>
 </ul>
-<p>口型</p>
+<p>网上找的其他教程（ <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_65108854/article/details/134281797">https://blog.csdn.net/qq_65108854/article/details/134281797</a> ）的插件推荐</p>
+<ul>
+<li>http：VaRest</li>
+<li>文字转语音及合成口型：Metahuman SDK</li>
+<li></li>
+</ul>
 <h2 id="过程记录"><a href="#过程记录" class="headerlink" title="过程记录"></a>过程记录</h2><h3 id="大模型接入"><a href="#大模型接入" class="headerlink" title="大模型接入"></a>大模型接入</h3><p>​		下载了视频中说的RWKV软件，感觉非常难用，对环境侵入也挺多的，因为想要使用他会自行给你安装python环境，还下载了许多包。由于对python不是很熟悉，感觉这种软件使用的体验非常差劲。</p>
 <p>​		安装完成后，下载了同视频中一样的最小中文模型进行测试时发现，下载完成后，在聊天界面中却无法选择已下载的模型。还需要在聊天中选择模型，点击启动时提示没有模型需要下载，这时候下载才行。如果是这样的话，那么模型管理界面的存在就显得多余且让人混乱了。而且如果模型开始下载了只能进行暂停操作，无法取消。</p>
 <p>​		我感觉还是使用ollama吧，ollama的使用体验真的是非常丝滑。</p>
@@ -122,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/metahuman-tutorial/" data-id="clwty32m2000bdnpz6prmg197" data-title="虚拟数字人搭建教程 -- 基于ue5和本地大模型" class="article-share-link">Share</a>
+      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/29/metahuman-tutorial/" data-id="clxtrkt3i000bdfoo7yy0cxfe" data-title="虚拟数字人搭建教程 -- 基于ue5和本地大模型" class="article-share-link">Share</a>
       
       
       
@@ -190,7 +201,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/11/">November 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document-galaxy/archives/2022/11/">November 2022</a></li></ul>
     </div>
   </div>
 
@@ -203,7 +214,11 @@
       <ul>
         
           <li>
-            <a href="/document-galaxy/2024/05/31/hello-world/">Hello World</a>
+            <a href="/document-galaxy/2024/06/25/xinhaoji-jilu/">信号机问题记录</a>
+          </li>
+        
+          <li>
+            <a href="/document-galaxy/2024/06/25/hello-world/">Hello World</a>
           </li>
         
           <li>
@@ -216,10 +231,6 @@
         
           <li>
             <a href="/document-galaxy/2024/05/30/how-to-download-vmware/">如何下载VMware虚拟机软件</a>
-          </li>
-        
-          <li>
-            <a href="/document-galaxy/2024/05/29/metahuman-tutorial/">虚拟数字人搭建教程 -- 基于ue5和本地大模型</a>
           </li>
         
       </ul>
