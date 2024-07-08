@@ -4,17 +4,13 @@
   <meta charset="utf-8">
   
   
-  <title>晋州音视频对讲梳理 | Hexo</title>
+  <title>Archives: 2024/7 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="主进程12345678910111213141516171819202122flowchart LRA[初始化] --&gt; B[监听求助键]B --&gt; C[收到求助键信号]C --&gt; D[发送HTTP请求 &#x2F;monitor&#x2F;videoRqt]A --&gt; E[建立wss通信]E --&gt; F[每分钟发送心跳]E --&gt; G[监听音视频对话控制消息]G --&gt; H">
-<meta property="og:type" content="article">
-<meta property="og:title" content="晋州音视频对讲梳理">
-<meta property="og:url" content="https://anmeng777.github.io/document-galaxy/2024/05/30/webrtc-jinzhou/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://anmeng777.github.io/document-galaxy/archives/2024/07/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="主进程12345678910111213141516171819202122flowchart LRA[初始化] --&gt; B[监听求助键]B --&gt; C[收到求助键信号]C --&gt; D[发送HTTP请求 &#x2F;monitor&#x2F;videoRqt]A --&gt; E[建立wss通信]E --&gt; F[每分钟发送心跳]E --&gt; G[监听音视频对话控制消息]G --&gt; H">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-30T13:31:44.000Z">
-<meta property="article:modified_time" content="2024-07-08T01:48:16.203Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,91 +69,58 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-webrtc-jinzhou" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/document-galaxy/2024/05/30/webrtc-jinzhou/" class="article-date">
-  <time class="dt-published" datetime="2024-05-30T13:31:44.000Z" itemprop="datePublished">2024-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      晋州音视频对讲梳理
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/document-galaxy/archives/2024" class="archive-year">2024</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/document-galaxy/2024/07/08/ed%E5%A4%A7%E6%A1%A5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  <time class="dt-published" datetime="2024-07-08T09:30:23.000Z" itemprop="datePublished">Jul 8</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/document-galaxy/2024/07/08/ed%E5%A4%A7%E6%A1%A5%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">ed大桥开发记录</a>
     </h1>
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="主进程"><a href="#主进程" class="headerlink" title="主进程"></a>主进程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">A[初始化] --&gt; B[监听求助键]</span><br><span class="line">B --&gt; C[收到求助键信号]</span><br><span class="line">C --&gt; D[发送HTTP请求 /monitor/videoRqt]</span><br><span class="line"></span><br><span class="line">A --&gt; E[建立wss通信]</span><br><span class="line">E --&gt; F[每分钟发送心跳]</span><br><span class="line">E --&gt; G[监听音视频对话控制消息]</span><br><span class="line">G --&gt; H[收到&#x27;开始音视频对话&#x27;消息]</span><br><span class="line">G --&gt; I[收到&#x27;结束音视频对话&#x27;消息]</span><br><span class="line">G --&gt; J[收到&#x27;切换音视频对话&#x27;消息]</span><br><span class="line">G --&gt; K[收到&#x27;音视频对话心跳&#x27;消息]</span><br><span class="line">G --&gt; L[收到&#x27;强制结束对话&#x27;消息]</span><br><span class="line">G --&gt; M[收到&#x27;取消视频对话请求&#x27;消息]</span><br><span class="line">H --&gt; O[加载对讲流程\n包括建立信令服务器连接\n加入房间等]</span><br><span class="line">O --&gt; P[接通]</span><br><span class="line">I --&gt; R[挂断对讲]</span><br><span class="line">J --&gt; S[切换摄像头]</span><br><span class="line">K --&gt; Q[如果当前处于对讲中\n且连续15秒\n没有收到心跳]</span><br><span class="line">Q --&gt; R</span><br><span class="line">L --&gt; R</span><br><span class="line">M --&gt; R</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><p>原有程序基础上：</p>
-<ul>
-<li><p>增加晋州专属通话页面</p>
-</li>
-<li><p>配置页面</p>
-<ul>
-<li>增加晋州协议选项</li>
-<li>如果选择了晋州协议<ul>
-<li>隐藏：ws连接</li>
-<li>增加：<ul>
-<li>晋州求助http url</li>
-<li>晋州websocket url</li>
-<li>增加车道号等</li>
-</ul>
-</li>
-<li>跳转对讲的时候不进入原有通话页面，而是晋州新页面</li>
-<li>程序启动时需要判断，如果是晋州协议，自动跳转到晋州通话页面，否则还是原有通话页面</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>在background中监听UDP数据包，如果收到了就发送http请求（已实现）</p>
-</li>
-<li><p>在background中建立晋州ws连接，如果收到通话消息了就调用前端方法</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://anmeng777.github.io/document-galaxy/2024/05/30/webrtc-jinzhou/" data-id="clycbpi76000ld3qc1cw79nrd" data-title="晋州音视频对讲梳理" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
+    </header>
   </div>
+</article>
   
     
-<nav id="article-nav">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/document-galaxy/2024/07/08/hello-world/" class="archive-article-date">
+  <time class="dt-published" datetime="2024-07-08T01:48:16.203Z" itemprop="datePublished">Jul 8</time>
+</a>
+      
   
-    <a href="/document-galaxy/2024/05/30/tech-choice/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          技术选型
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/document-galaxy/2024/07/08/hello-world/">Hello World</a>
+    </h1>
   
-  
-    <a href="/document-galaxy/2024/05/30/how-to-download-vmware/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">如何下载VMware虚拟机软件</div>
-    </a>
-  
-</nav>
 
-  
+    </header>
+  </div>
 </article>
+  
+  
+    </div></section>
+  
 
 
 </section>
